@@ -1,6 +1,6 @@
 import numpy as np
 from flask import Flask,render_template, request 
-# import spacy
+import spacy
 import os
 import pickle 
 
@@ -34,15 +34,15 @@ def predict():
                 d[k] = tuple(d[k] for d in ds)
             return d.values()
 
-        # def show_labels(x):
-        #     ner=spacy.load("en_core_web_sm")
-        #     doc=ner(x).ents
-        #     a=[(tag.text,tag.label_) for tag in doc]
-        #     return a
+        def show_labels(x):
+            ner=spacy.load("en_core_web_sm")
+            doc=ner(x).ents
+            a=[(tag.text,tag.label_) for tag in doc]
+            return a
 
-        # label= show_labels(request.form['message'])
+        label= show_labels(request.form['message'])
         result=show_result()
-        return render_template('result.html',prediction=result,target=target_category,pred=pred_val)
+        return render_template('result.html',prediction=result,target=target_category,pred=pred_val,label=label)
     
     
 
