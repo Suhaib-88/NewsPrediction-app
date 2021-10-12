@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .content-table {
+                            border: 1px solid green;
+                            border-collapse: collapse;
+                            margin: 25px 0;
+                            font-size: 0.9em;
+                            font-family: sans-serif;
+                            min-width: 400px;
+                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                        }
+
+        .content-table thead tr {
+            background-color: #57f398;
+            color: #ffffff;
+            text-align: left;
+                        }
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+                        }
+
+    </style>
+
+
+<title>News Results</title>
+
+
+</head>
+<body><br><br><br><br><br>
+<h1 style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Predicting News Category...</h1>
+
+<p> 
+    <div id="container">
+        <div style="width:500px;height:100px;border:3px solid rgb(116, 245, 77);background-color: rgb(224, 220, 220);">
+           Predicted Category: <font color='green' size=4 ><b>{{target }}==></b></font>  <strong> {{pred}} </strong>
+        </div>
+        <hr>
+       {{prediction}}
+        <br>
+        <br>
+        <!-- Tags: <font color='blue'><u>{{label}}</u> </font> -->
+        
+    
+    </div><br>
+    <button onclick="goBack()">Go Back</button>
+    <script>
+        function goBack() {
+        window.history.back();
+        }
+    </script>
+</p>
+<hr>
+
+
+<table class="content-table">
+    <h3><caption>Tags reference table</caption></h3>
+    <thead>
+        <tr>
+        <th>Type</th>
+        <th>Description</th>
+     
+        </tr>
+    </thead>    
+    <tbody>
+        <tr><td>PERSON</td>        <td>People names (including fictional)</td></tr>
+
+        <tr><tr><td>ORG</td>         <td>Company, Agency or Institutions</td></tr>
+
+        <tr><td>NORP</td>        <td>Nationality, Religion or Political group</td></tr>
+
+        <tr><td>GPE</td>         <td>Countries, cities or states</td></tr>
+
+        <tr><td>ORDINAL</td>         <td>"first", "second" etc</td></tr>
+
+        <tr><td>CARDINAL</td>         <td>Numericals that dont fall in other types</td></tr>
+
+        <tr><td>EVENT</td>          <td>Sports events, battles</td></tr>
+
+        <tr><td>LANGUAGE</td>         <td>Any language</td></tr>
+
+        <tr><td>DATE</td>         <td>Absolute or relative period</td></tr>
+
+        <tr><td>TIME</td>        <td>A period lesser than a day</td></tr>
+
+        <tr><td>PERCENT</td>         <td>%age</td></tr>
+
+        <tr><td>QUANTITY</td>         <td>Measurement of weight or distance</td></tr>
+
+        <tr><td>MONEY</td>         <td>A monetary value</td></tr>
+
+        <tr><td>PRODUCT</td>         <td>Objects,Vehicle or food (excludes services)</td></tr>
+
+        <tr><td>LAW</td>         <td>Named documents like laws</td></tr>
+
+        <tr><td>FAC</td>          <td>Buildings, airports or highways</td></tr>
+
+        <tr><td>LOC</td>          <td>Non GPE locations like water bodies</td></tr>
+
+        <tr><td>WORK_OF_ART</td>         <td>Titles of books or songs</td></tr>
+
+    </tbody>
+</table>
+  
+{% if target == "POLITICS" %}    
+    <style> 
+        body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+        body::after {    
+            content: "";
+            background-image: url('static/politics.jpg');
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        }
+    </style>
+
+{% elif target == "WELLNESS" %}    
+    <style>
+    body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+    body::after {    
+            content: "";
+            background-image: url('static/wellness.jpg');
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        } 
+    </style>
+
+{% elif target == "ENTERTAINMENT" %}    
+    <style>
+    body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+    body::after {    
+            content: "";
+            background-image: url('static/entertainments.jpg');
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        } 
+    </style>
+
+{% elif target == "FOOD & DRINK" %}    
+    <style>
+    body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+    body::after {    
+            content: "";
+            background-image: url('static/foods.jpg');
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        } 
+    </style>
+
+{% elif target == "STYLE & BEAUTY" %}    
+    <style>
+    body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+    body::after {    
+            content: "";
+            background-image: url('static/style.png');
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        } 
+    </style>
+
+{% elif target == "SPORTS" %}    
+    <style>
+    body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+    body::after {    
+            content: "";
+            background-image: url('static/sport.jpg');
+            height: 90px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        } 
+    </style>
+
+{% elif target == "TRAVEL" %}    
+    <style>
+    body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+    body::after {    
+            content: "";
+            background-image: url('static/travels.jpg');
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        } 
+    </style>
+
+
+
+{% elif target == "WORLD NEWS" %}    
+    <style> 
+        body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+        body::after {    
+            content: "";
+            background-image: url('static/world_news.jpg');
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        }     
+    </style>
+
+{% elif target == "BUSINESS" %}    
+    <style> 
+       body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+        body::after {    
+            content: "";
+            background-image: url('static/business.jpg');
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        }              
+    </style>
+
+{% else %}
+    <style> 
+        body{
+            position: relative; 
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            }
+
+        body::after {    
+            content: "";
+            background-image: url('static/parents.jpg');
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+        }
+    </style>
+{% endif %}
+
+
+</body>
+</html>

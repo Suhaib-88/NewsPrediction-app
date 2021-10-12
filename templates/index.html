@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    <style> 
+      h2 {
+        width: 30px;
+        height: 20px;
+        color: rgb(56, 56, 56);
+        animation-name: example;
+        animation-duration: 200s;
+        max-width: 50px;
+        margin: auto;
+        white-space: nowrap;
+      }
+      
+      @keyframes example { 
+      0%   {color: rgb(229, 226, 226);}
+      20%  {color: rgb(10, 40, 85);}
+      40%  {color: rgb(197, 15, 91);}
+      60%  {color: rgb(16, 253, 253);}
+      80% {color: rgb(250, 226, 7);}
+      100% {color: green;}
+      }
+      
+    </style>
+      
+    <h2><center><b>News Headline Classifier</b></center></h2><br><br><br>
+   
+   
+    <title>WELCOME People </title>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+          <div class="container">
+            <a class="navbar-brand mr-4" href="/">News Predictor</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="{{ url_for('about')}}" >About this project</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+<pre>
+<form action="{{ url_for('predict')}}" method="post">
+  <input type='text' name="message", placeholder="Write a News headline" required="required" size=50/>
+  <button type="submit" name='button' class="button">Predict Category</button>
+</form>
+</pre>
+<footer>
+  <h4><center><font color="black"><u> App Features</u></font></h4>
+  <div style="width:700px;height:350px;border:3px solid rgb(0, 0, 0) ;background-color: rgb(255, 255, 255);" class="content">
+    
+    <style>
+      .content {
+        max-width: 900px;
+        margin: auto;
+      }
+    </style>
+
+    <font color="#A9A9A9">
+      <ul>
+        <li> First App takes in user submitted headlines and predicts the category </li><br>
+        <li> A headline may belong to one of the following category categories [BUSINESS, POLITICS, WELLNESS, PARENTING, WORLDNEWS,TRAVEL,STYLE & BEAUTY,SPORTS,TRAVEL,FOOD & DRINK,ENTERTAINMENT]. It may also belong to multiple categories at once!!</li><br>
+        <li> On top of that, App also predicts the tags for a headline. for example: A headline may contain (name of a person, date, org.name etc)  </li>
+        <li><font color=red><i> Please do read "about this project"<i></font></li>
+      </ul>
+    </font></center>
+  </div>
+</footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+body {
+    background: #fafafa;
+    color: #333333;
+    background-color: #ffffff;
+    margin-top: 5rem;
+  }    
+
+  .bg-steel {
+    background-color: #070808;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
