@@ -130,7 +130,7 @@
         }
     </style>
 
-{% elif target == "WELLNESS" %}    
+{% if target == "HEALTH" %}    
     <style>
     body{
             position: relative; 
@@ -141,7 +141,7 @@
 
     body::after {    
             content: "";
-            background-image: url('static/wellness.jpg');
+            background-image: url('static/health.jpg');
             height: 100px;
             position: absolute;
             top: 0px;
@@ -152,7 +152,7 @@
         } 
     </style>
 
-{% elif target == "ENTERTAINMENT" %}    
+{% if target == "ENTERTAINMENT" %}    
     <style>
     body{
             position: relative; 

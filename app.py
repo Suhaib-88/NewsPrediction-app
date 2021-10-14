@@ -8,7 +8,7 @@ os.putenv('LANG', 'en_US.UTF-8')
 
 app= Flask(__name__)
 
-model= pickle.load(open("Model.pkl", 'rb'))
+model= pickle.load(open("predModel.pkl", 'rb'))
 
 
 @app.route('/',methods=['GET'])                                                                                                                                           
