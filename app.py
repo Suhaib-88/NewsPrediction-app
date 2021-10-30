@@ -58,7 +58,7 @@ def predict():
         except:
             pass
         
-        return render_template('result.html',prediction=result,target=target_category,pred=pred_val,label=label)
+        return render_template('result.html',prediction=result,target=target_category,pred=pred_val,label=label,date=date,urls=urls)
     
     
 
