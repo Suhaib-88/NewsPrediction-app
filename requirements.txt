@@ -1,5 +1,5 @@
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0-py3-none-any.whl
-newsapi-python==2.0
+newsapi-python==0.2.6
 click==7.1.2
 Flask==1.1.2
 gunicorn==19.9.0
