@@ -46,19 +46,19 @@ def predict():
         label= show_labels(request.form['message'])
         result=show_result()
         
-        with open('password.txt','r') as file:
-            key=file.read()
-        
-        api=NewsApiClient(api_key=key)
-        data=api.get_everything(q=request.form['message'],language='en')
-        
-        try:
+       try:
+            with open('password.txt','r') as file:
+                key=file.read()
+            api=NewsApiClient(api_key=key)
+            data=api.get_everything(q=request.form['message'],language='en')
+
             urls=data['articles'][0]['url']
             date=data['articles'][0]['publishedAt'][:10]
+
+            return render_template('result.html',prediction=result,target=target_category,pred=pred_val,label=label,urls=urls,date=date)
         except:
-            pass
-        
-        return render_template('result.html',prediction=result,target=target_category,pred=pred_val,label=label,date=date,urls=urls)
+            return render_template('result.html',prediction=result,target=target_category,pred=pred_val,label=label)    
+    
     
     
 
