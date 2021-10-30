@@ -1,3 +1,3 @@
 # NewsPrediction-app
 
-app-url: https://newscategory-predict-api.herokuapp.com/
+app-url: news-categorizerapp.herokuapp.com/
