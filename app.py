@@ -46,7 +46,7 @@ def predict():
         label= show_labels(request.form['message'])
         result=show_result()
         
-       try:
+        try:
             with open('password.txt','r') as file:
                 key=file.read()
             api=NewsApiClient(api_key=key)
